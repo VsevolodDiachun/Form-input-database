@@ -1,0 +1,71 @@
+
+
+/* FeedBack Component */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 557px;
+}
+
+.title {
+    font-size: 40px;
+    line-height: 130%;
+
+    margin: 0 0 31px 0;
+}
+
+.margin-8px-down {
+    margin-bottom: 8px;
+}
+
+.margin-message-23px-down {
+    margin-bottom: 23px;
+}
+
+.size-name-email {
+    width: 557px;
+    height: 93px;
+    padding: 0;
+
+    border: 1px solid #DCDCDC;
+    border-radius: 10px;
+}
+
+.size-message {
+    height: 158px; /* 189px */
+    width: 557px;
+    resize: none;
+
+    padding: 31px 0 0 0;
+
+    border: 1px solid #DCDCDC;
+    border-radius: 10px;
+}
+
+.btn-send {
+    width: 218px;
+    height: 73px;
+
+    border-radius: 500px;
+    border: none;
+
+    color: #fff;
+    background: #FAD34F;
+
+    font-family: 'ApercuArabicPro';
+    font-size: 18px;
+}
+
+.btn-send:hover {
+    background: #ffc400;
+}
+
+.btn-send:active {
+    background: #c99a00;
+}
+
+.font-text {
+    font-size: 18px;
+    text-indent: 46px;
+}

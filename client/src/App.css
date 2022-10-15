@@ -1,0 +1,15 @@
+
+
+
+body{
+    
+    overflow-x: hidden;
+}
+
+.feedback {
+    margin: 179px 0 0 150px;
+}
+
+.poss {
+    position: absolute;
+}

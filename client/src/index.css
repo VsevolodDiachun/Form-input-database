@@ -1,0 +1,22 @@
+@font-face {
+  font-family: ApercuArabicPro;
+  src: url(./font/ApercuArabicProLight.ttf);
+}
+
+body *{
+  font-family: 'ApercuArabicPro';
+  color: #2D2D2D;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  font-family: 'ApercuArabicPro';  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'sans-serif',
+    monospace;
+}

@@ -1,0 +1,96 @@
+
+
+.smile-yellow-up {
+    position: absolute; 
+    top: 23px;
+    left: 29px;
+}
+
+.smile-yellow-middle {
+    position: absolute; 
+    z-index: 3; 
+    top: -384px;
+    left: -50px;
+}
+
+.smile-pink-middle {
+    position: absolute;
+    z-index: 2; 
+    top: -341px;
+    left: -47px;
+}
+
+.clouds {
+    position: absolute;
+    z-index: -1; 
+    top: 101px; 
+    left: -92px;
+}
+
+.sun {
+    position: absolute;
+    top: 21px;
+    left: 714px;
+}
+
+.bar-bottom {
+    width: 2920px;
+    height: 200px;
+    /* height: 200px; */
+    position: absolute;
+    z-index: -1;
+    top: 928px;
+    left: -745px;
+}
+
+.smile-pinl-bottom {
+    position: absolute;
+    z-index: 2;
+    top: 890px;
+    left: 14.67px;
+}
+
+.green-smile {
+    position: absolute;
+    top: 928px;
+    right: 127px;
+}
+
+.smile-yellow-bottom {
+    position: absolute;
+    top: 979px;
+    right: 0px;
+}
+
+.networking {
+    position: absolute;
+    top: 1007px;
+    left: 343px;
+}
+
+.map-img{
+    object-fit: cover;
+
+    height: 100%;
+    border-radius: 1000px 0 50% 1000px/ 1000px 0px 7% 1000px;
+
+
+    
+    /* border-radius: 1000px 0 0 1000px */
+}
+
+.children-smiles{
+    position: relative;
+}
+
+.map-photo {
+    position: absolute;
+    width: 1030px;
+    height: 947px;
+    z-index: -1;
+    top: -52px; 
+    right: -404px;
+    
+    
+    
+}
