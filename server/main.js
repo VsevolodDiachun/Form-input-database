@@ -37,6 +37,6 @@ app.post('/message/', async function(req, res) {
     res.json({success:true});
 });
 
-app.listen(5001, function() {
+app.listen(3000, function() {
     console.log('server started!');
 });
