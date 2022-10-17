@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
 import createUser from '../../../api/users.js';
 import "./feedBack.css";
@@ -44,7 +44,7 @@ const FeedBack = () => {
     }
 
 
-    return(
+    return (
         <>
             <form className="form">
                 <p className="title">Reach out to us!</p>
@@ -64,8 +64,9 @@ const FeedBack = () => {
                           onChange={(e) => setMessage(e.target.value)}
                 />
 
-                <button onClick={(e) => buttonSend(e)} 
-                className="btn-send">Send message</button>
+                <button onClick={(e) => buttonSend(e)}
+                        className="btn-send">Send message
+                </button>
             </form>
         </>
     )

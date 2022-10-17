@@ -12,7 +12,7 @@ const conn = mysql.createConnection({
 conn.connect(err => {
     if (err) {
         console.log(err);
-        return err:
+        return err;
     }
     else {
         console.log('Darabase - - - - - OK');
