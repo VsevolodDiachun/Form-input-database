@@ -1,10 +1,10 @@
 import {useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
 import * as yup from 'yup';
 
 import createUser from '../../../api/users.js';
+
+import 'react-toastify/dist/ReactToastify.css';
 import "./feedBack.css";
 
 const FeedBack = () => {
@@ -18,12 +18,12 @@ const FeedBack = () => {
     let schema = yup.object().shape({
         name: yup.string('Name is invalid').required('Name is required').min(3, 'Name is too short'),
         email: yup.string('Email is invalid').email('Email is invalid').required('Email is required'),
-        message: yup.string('Message is invalid').required('Message is required').min(3, 'Message is too short')
+        message: yup.string('Message is invalid').required('Message is required').min(2, 'Message is too short')
     });
 
     function submitHandler(e){
         e.preventDefault();
-        schema.validate(feedbackData).then((result)=>{
+        schema.validate(feedbackData).then(()=>{
             createUser(feedbackData).then(()=>{
                 toast.success('Form is submitted');
                 setFeedbackData({
