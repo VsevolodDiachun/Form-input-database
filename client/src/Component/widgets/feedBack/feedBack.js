@@ -1,72 +1,69 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+import * as yup from 'yup';
 
 import createUser from '../../../api/users.js';
 import "./feedBack.css";
-import {toast} from "react-toastify";
 
 const FeedBack = () => {
+    const [feedbackData, setFeedbackData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
 
-    const [onName, setName] = useState();
-    const [onEmail, setEmail] = useState();
-    const [onMessage, setMessage] = useState();
 
+    let schema = yup.object().shape({
+        name: yup.string('Name is invalid').required('Name is required').min(3, 'Name is too short'),
+        email: yup.string('Email is invalid').email('Email is invalid').required('Email is required'),
+        message: yup.string('Message is invalid').required('Message is required').min(3, 'Message is too short')
+    });
 
-    const buttonSend = (e) => {
-        // e.preventDefault();
-        if (checkEmailShort(onMessage).length === 0) {
-            createUser(onName, onEmail, onMessage)
-                .then(() => {
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                });
-        } else {
-            toast.error(checkEmailShort(onMessage));
-        }
-        //createUser(onName, onEmail, onMessage);
+    function submitHandler(e){
+        e.preventDefault();
+        schema.validate(feedbackData).then((result)=>{
+            createUser(feedbackData).then(()=>{
+                toast.success('Form is submitted');
+                setFeedbackData({
+                    name:'',
+                    email: '',
+                    message: ''
+                })
+            })
+        }).catch((err)=>{
+            toast.error(err?.errors[0])
+        })
     }
-
-
-    const checkEmailShort = (str) => {
-        let message = '';
-        if (str.split('@').length === 2) {
-            if (str.split('@')[1].split('.').length < 2) {
-                message = 'Нема крапочки.';
-            } else if (str.split('@')[1].split('.')[0].length === 0) {
-                message = 'Довжина між псом і крапкою менша ніж 1 символ.';
-            } else {
-                message = '';
-            }
-        } else {
-            message = 'Нема пса, або забагато псів.';
-        }
-        return message;
-    }
-
 
     return (
         <>
-            <form className="form">
+            <form onSubmit={submitHandler} className="form">
+                <ToastContainer />
                 <p className="title">Reach out to us!</p>
                 <input type="text"
+                       value={feedbackData.name}
                        className="size-name-email margin-8px-down font-text"
                        placeholder="Your name*"
-                       onChange={(e) => setName(e.target.value)}
-                />
-                <input type="email"
-                       className="size-name-email margin-8px-down font-text"
-                       placeholder="Your e-mail*"
-                       onChange={(e) => setEmail(e.target.value)}
-                />
-                <textarea type="text"
-                          className="size-message margin-message-23px-down font-text"
-                          placeholder="Your message*"
-                          onChange={(e) => setMessage(e.target.value)}
+                       onChange={(e) => setFeedbackData({...feedbackData, name:e.target.value})}
                 />
 
-                <button onClick={(e) => buttonSend(e)}
-                        className="btn-send">Send message
-                </button>
+                <input type="text"
+                       value={feedbackData.email}
+                       className="size-name-email margin-8px-down font-text"
+                       placeholder="Your e-mail*"
+                       onChange={(e) => setFeedbackData({...feedbackData, email:e.target.value})}
+                />
+                <textarea type="text"
+                          value={feedbackData.message}
+                          className="size-message margin-message-23px-down font-text"
+                          placeholder="Your message*"
+                          onChange={(e) => setFeedbackData({...feedbackData, message:e.target.value})}
+                />
+
+                {/*<button onClick={(e) => buttonSend(e)}*/}
+                <button type="submit" className="btn-send">Send message</button>
             </form>
         </>
     )

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ef2b5cc.css",
-    "main.js": "/static/js/main.475d1345.js",
+    "main.css": "/static/css/main.5c0c50cc.css",
+    "main.js": "/static/js/main.7fe0b2c8.js",
     "static/media/Resorts-V.png": "/static/media/Resorts-V.b9a6a7c10d08e270f66b.png",
     "static/media/ApercuArabicProLight.ttf": "/static/media/ApercuArabicProLight.f830de790b08ede1478c.ttf",
     "static/media/clouds.svg": "/static/media/clouds.b289eca70cc5d3d5cb7171f25018b782.svg",
@@ -15,11 +15,11 @@
     "index.html": "/index.html",
     "static/media/bar-bottom.svg": "/static/media/bar-bottom.4b2ed5c4d3b354771841ed72eab7acb0.svg",
     "static/media/sun.svg": "/static/media/sun.386530f142eafd073496b272b2d6632d.svg",
-    "main.9ef2b5cc.css.map": "/static/css/main.9ef2b5cc.css.map",
-    "main.475d1345.js.map": "/static/js/main.475d1345.js.map"
+    "main.5c0c50cc.css.map": "/static/css/main.5c0c50cc.css.map",
+    "main.7fe0b2c8.js.map": "/static/js/main.7fe0b2c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ef2b5cc.css",
-    "static/js/main.475d1345.js"
+    "static/css/main.5c0c50cc.css",
+    "static/js/main.7fe0b2c8.js"
   ]
 }

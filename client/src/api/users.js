@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from '../config.json'
-function createUser(name, email, message) {
+function createUser({name, email, message}) {
     console.log(config.baseUrl)
     return axios.post(`${config.baseUrl}/message/`,
         {
